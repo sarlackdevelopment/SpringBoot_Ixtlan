@@ -1,6 +1,7 @@
 plugins {
 	id 'org.springframework.boot' version '2.2.5.RELEASE'
 	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+	id "org.flywaydb.flyway" version "6.3.1"
 	id 'java'
 }
 
@@ -15,6 +16,12 @@ configurations {
 	}
 }
 
+flyway {
+	url = 'jdbc:postgresql://localhost/cats'
+	user = 'postgres'
+	password = 1
+}
+
 repositories {
 	mavenCentral()
 }
@@ -27,6 +34,7 @@ dependencies {
 	implementation 'javax.xml.bind:jaxb-api'
 	implementation 'com.sun.xml.bind:jaxb-core:2.3.0.1'
 	implementation 'com.sun.xml.bind:jaxb-impl:2.4.0-b180830.0438'
+	//implementation 'com.h2database:h2:1.4.197'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
@@ -35,4 +43,10 @@ dependencies {
 
 test {
 	useJUnitPlatform()
+}
+
+task dbmigrate {
+	doLast() {
+		println 'Hello, World!'
+	}
 }

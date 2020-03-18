@@ -1,0 +1,1 @@
+insert into adults (id, name) values (4, 'Siberia');
