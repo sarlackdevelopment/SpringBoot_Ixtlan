@@ -7,9 +7,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class MainController {
 
-  @GetMapping("/some")
+  @GetMapping("/")
   public String greeting(Map<String, Object> model) {
-    return "Cool!!!";
+    return "hello";
+  }
+
+  @GetMapping("/home")
+  public String greeting1(Map<String, Object> model) {
+    return "home";
   }
 
 }
