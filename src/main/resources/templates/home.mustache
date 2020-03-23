@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html
     xmlns="http://www.w3.org/1999/xhtml"
     xmlns:th="https://www.thymeleaf.org"
@@ -10,5 +10,16 @@
 <h1>Welcome!</h1>
 
 <p>Click <a th:href="@{/hello}">here</a> to see a greeting.</p>
+</body>
+</html>-->
+
+<html>
+<body>
+<div>
+  <form action="/logout" method="post">
+    <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+    <input type="submit" value="Sign Out"/>
+  </form>
+</div>
 </body>
 </html>
