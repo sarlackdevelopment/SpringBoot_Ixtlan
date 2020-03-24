@@ -24,7 +24,7 @@ public class RegistrationController {
 
     if (userFromDb != null) {
       model.put("message", "User exists!");
-      return "registration";
+      return "login";
     }
 
     user.setActive(true);
