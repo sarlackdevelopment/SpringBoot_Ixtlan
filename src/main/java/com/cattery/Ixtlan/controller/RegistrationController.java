@@ -1,7 +1,9 @@
 package com.cattery.Ixtlan.controller;
 
+import com.cattery.Ixtlan.domain.Role;
 import com.cattery.Ixtlan.domain.User;
 import com.cattery.Ixtlan.repo.UserRepo;
+import java.util.Collections;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -28,7 +30,7 @@ public class RegistrationController {
     }
 
     user.setActive(true);
-    //user.setRoles(Collections.singleton(Role.USER));
+    user.setRoles(Collections.singleton(Role.USER));
     userRepo.save(user);
 
     return "redirect:/login";
