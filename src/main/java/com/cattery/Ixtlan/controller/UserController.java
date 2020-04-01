@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @PreAuthorize("hasAuthority('ADMIN')")
 public class UserController {
 
-  private class CheckedRoles {
+  /* private class CheckedRoles {
 
     private Role role;
     private String checked;
@@ -33,7 +33,7 @@ public class UserController {
       this.checked = checked;
     }
 
-  }
+  } */
 
   @Autowired
   private UserRepo userRepo;
@@ -44,7 +44,7 @@ public class UserController {
     return "userList";
   }
 
-  @GetMapping("{user}")
+  /* @GetMapping("{user}")
   public String userEditForm(@PathVariable User user, Model model) {
 
     List<CheckedRoles> roles = Arrays.asList(Role.values()).stream()
@@ -57,6 +57,14 @@ public class UserController {
 
     model.addAttribute("user", user);
     model.addAttribute("roles", roles);
+
+    return "userEdit";
+  } */
+
+  @GetMapping("{user}")
+  public String userEditForm(@PathVariable User user, Model model) {
+    model.addAttribute("user", user);
+    model.addAttribute("roles", Role.values());
 
     return "userEdit";
   }
