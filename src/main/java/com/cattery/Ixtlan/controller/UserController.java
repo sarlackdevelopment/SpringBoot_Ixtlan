@@ -4,7 +4,6 @@ import com.cattery.Ixtlan.domain.Role;
 import com.cattery.Ixtlan.domain.User;
 import com.cattery.Ixtlan.repo.UserRepo;
 import java.util.Arrays;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -23,18 +22,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 @PreAuthorize("hasAuthority('ADMIN')")
 public class UserController {
 
-  /* private class CheckedRoles {
-
-    private Role role;
-    private String checked;
-
-    public CheckedRoles(Role role, String checked) {
-      this.role = role;
-      this.checked = checked;
-    }
-
-  } */
-
   @Autowired
   private UserRepo userRepo;
 
@@ -43,23 +30,6 @@ public class UserController {
     model.addAttribute("users", userRepo.findAll());
     return "userList";
   }
-
-  /* @GetMapping("{user}")
-  public String userEditForm(@PathVariable User user, Model model) {
-
-    List<CheckedRoles> roles = Arrays.asList(Role.values()).stream()
-        .map(item -> {
-          CheckedRoles some = new CheckedRoles(item, user.getRoles().contains(item) ? "checked": "");
-          return some;
-        })
-        .collect(Collectors.toList());
-
-
-    model.addAttribute("user", user);
-    model.addAttribute("roles", roles);
-
-    return "userEdit";
-  } */
 
   @GetMapping("{user}")
   public String userEditForm(@PathVariable User user, Model model) {

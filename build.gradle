@@ -27,22 +27,15 @@ repositories {
 }
 
 dependencies {
-
-	//implementation 'org.springframework.boot:spring-boot-starter-freemarker'
-
 	implementation 'org.springframework.boot:spring-boot-starter-freemarker'
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
-	//implementation 'org.freemarker:freemarker:2.3.30'
-	//implementation 'org.springframework.boot:spring-boot-starter-mustache'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.postgresql:postgresql'
 	implementation 'org.projectlombok:lombok'
 	implementation 'javax.xml.bind:jaxb-api'
 	implementation 'com.sun.xml.bind:jaxb-core:2.3.0.1'
 	implementation 'com.sun.xml.bind:jaxb-impl:2.4.0-b180830.0438'
-	//implementation 'com.h2database:h2:1.4.197'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.springframework.security:spring-security-test'
