@@ -2,7 +2,7 @@ package com.cattery.Ixtlan.controller;
 
 import com.cattery.Ixtlan.domain.Role;
 import com.cattery.Ixtlan.domain.User;
-import com.cattery.Ixtlan.repo.UserRepo;
+import com.cattery.Ixtlan.repos.UserRepo;
 import java.util.Collections;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;

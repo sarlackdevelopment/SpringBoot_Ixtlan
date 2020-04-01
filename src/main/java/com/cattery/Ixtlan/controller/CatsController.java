@@ -1,7 +1,7 @@
 package com.cattery.Ixtlan.controller;
 
 import com.cattery.Ixtlan.domain.Adults;
-import com.cattery.Ixtlan.repo.AdultsRepo;
+import com.cattery.Ixtlan.repos.AdultsRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
