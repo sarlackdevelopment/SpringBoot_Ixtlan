@@ -19,23 +19,20 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping("/user")
-@PreAuthorize("hasAuthority('ADMIN')")
 public class UserController {
 
   @Autowired
   private UserRepo userRepo;
 
   @GetMapping
-  //@PreAuthorize("hasAuthority('USER')")
-  //@PreAuthorize("hasRole('ADMIN')")
-  //@PreAuthorize("hasRole('ROLE_ADMIN')")
+  @PreAuthorize("hasAuthority('ADMIN')")
   public String userList(Model model) {
     model.addAttribute("users", userRepo.findAll());
     return "userList";
   }
 
   @GetMapping("{user}")
-  //@PreAuthorize("hasAuthority('ADMIN')")
+  @PreAuthorize("hasAuthority('ADMIN')")
   public String userEditForm(@PathVariable User user, Model model) {
     model.addAttribute("user", user);
     model.addAttribute("roles", Role.values());
@@ -69,3 +66,4 @@ public class UserController {
   }
 
 }
+
